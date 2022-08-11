@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+:root {
+ --sky: #8fe0ff;
+ --baby: #75b4e3;
+}
+
+h1 {
+    text-align: center;
+    background: var(--sky);
+    margin-bottom: 0;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+.card-group h2 {
+    width: 100%;
+}
+
+.jumbotron-fluid {
+    display: flex;
+}
+
+.search-container {
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+.btn {
+    background: var(--baby);
+    width: 100%;
+}
+
+.container {
+    padding-right: 30px;
+}

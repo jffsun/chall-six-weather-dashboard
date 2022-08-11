@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast</title>
+  <!-- Link Custom Fonts Here -->
+  <!-- Bootstrap Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <h1 class="display-4">Weather Dashboard</h1>    
+    <!-- Contents container -->
+    <div class="jumbotron jumbotron-fluid">
+
+        <!-- City search column container -->
+        <div class="search-container col-4">
+            <h2>Search for a City</h2>
+
+            <!-- Searchbar -->
+            <form id="search-form">
+            <input class="form-control form-control-lg" id="search-input" type="text" placeholder="Los Angeles">
+            <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+            <!-- Recent searches -->
+            <div id="recent-list">
+                <ul
+
+            </div>
+        </div>
+
+
+        <!-- Forecast container  -->
+        <div class="container">
+
+            <!-- Today forecast -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Irvine (MM/DD/YY)</h5>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Wind:</p>
+                    <p class="card-text">Humidity:</p>
+                    <p class="card-text">UV Index:</p>
+                </div>
+            </div>
+    
+            <!-- 5-Day Forecast -->
+            <div class="card-group">
+                <h2>5-Day Forecast</h2>
+
+                <!-- Day forecast card -->
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      
+
+    <!-- JQuery -->
+    <script src="./assets/js/script.js"></script>
+</body>
