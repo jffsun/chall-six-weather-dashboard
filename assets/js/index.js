@@ -1,63 +1,107 @@
-var recentList = $('#recent-list')
+var resultTextEl = $('#result-text');
+var recentList = $('#recent-list');
+var tempToday = $('#temp-today');
+var windToday = $('#wind-today');
+var humidToday = $('#humid-today');
+var uvToday = $('#uv-today');
+
+
+
 var recents = [];
 
 // Pulling the api key from the config.js
 console.log(api.key);
+console.log(`https://api.openweathermap.org/data/2.5/weather?q=${api.city}&appid=${api.key}&units=imperial`)
 
-console.log(`https://api.openweathermap.org/data/2.5/onecall?lat=${api.lat}&lon=${api.lon}&appid=${api.key}`);
+// Searchbar function
+var searchFormEl = $('#search-form');
 
-function searchApi(query) {
-    var weatherQueryUrl = 'https://www.loc.gov/search/?fo=json';
-  
-    if (format) {
-      locQueryUrl = 'https://www.loc.gov/' + format + '/?fo=json';
-    }
-  
-    locQueryUrl = locQueryUrl + '&q=' + query;
-  
-    fetch(locQueryUrl)
-      .then(function (response) {
-        if (!response.ok) {
-          throw response.json();
-        }
-  
-        return response.json();
-      })
-      .then(function (locRes) {
-        // write query to page so user knows what they are viewing
-        resultTextEl.textContent = locRes.search.query;
-  
-        console.log(locRes);
-  
-        if (!locRes.results.length) {
-          console.log('No results found!');
-          resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
-        } else {
-          resultContentEl.textContent = '';
-          for (var i = 0; i < locRes.results.length; i++) {
-            printResults(locRes.results[i]);
-          }
-        }
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+function handleSearchFormSubmit(e) {
+  e.preventDefault();
+
+  var searchInputVal = $('#search-input').val();
+
+  if (!searchInputVal) {
+    console.log('You need a search input value!');
+    return;
   }
 
-// // Append unordered list items to #recent
-// function renderRecents () {
+  console.log(searchInputVal);
+  var city = searchInputVal;
+  searchApi(city);
+}
 
-//     recentList.innerHTML = ""
+searchFormEl.submit(handleSearchFormSubmit);
 
-//     // Render new li for each previous search 
-//     for (var i=0; i < recents.length; i++) {
+// First call API for latitutude and longitude
+function searchApi(city) {
+    var coordinateQueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + api.key + "&units=imperial"
+    console.log(coordinateQueryUrl);
+
+    fetch(coordinateQueryUrl)
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (geoData) {
+          console.log(geoData);
+          console.log(geoData.coord)
+          //TO DO: display and store recent search function
+          weatherApi(geoData);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    // .catch(function (error) {
+    //   alert('Unable to connect to GitHub');
+    // });
+};
+
+// Then call API for weather conditions
+function weatherApi(geoData) {
+  var weatherQueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + geoData.coord.lat + "&lon=" + geoData.coord.lon + "&exclude=hourly,daily&appid=" + api.key
+
+  console.log(weatherQueryUrl);
+
+  fetch(weatherQueryUrl)
+  .then(function (response) {
+    if (response.ok) {
+      console.log(response);
+      response.json().then(function (weatherData) {
+        console.log(weatherData);
+        //TO DO: display and store recent search function
+        todayForecast(weatherData);
+      });
+    } else {
+      alert('Error: ' + response.statusText);
+    }
+  })
+  // .catch(function (error) {
+  //   alert('Unable to connect to GitHub');
+  // });
+};
+// TO DO: trim display data to today forecast el with units
+function todayForecast (weatherData) {
+  tempToday.text(weatherData.current.temp)
+  windToday.text(weatherData.current.wind_speed)
+  humidToday.text(weatherData.current.humidity)
+  uvToday.text(weatherData.current.uvi)
+}
+
+// TO DO: Search history - append unordered list items to #recent
+function renderRecents () {
+
+    recentList.innerHTML = ""
+
+    // Render new li for each previous search 
+    for (var i=0; i < recents.length; i++) {
     
-//     // recent variable represents recents array item at [i]
-//     var recent = recents[i];
+    // recent variable represents recents array item at [i]
+    var recent = recents[i];
 
-//     var newRecent = $("<btn></btn>").text(city);
-//     recentList.append(newRecent)
-//     }
-// }
+    var newRecent = $("<btn></btn>").text(city);
+    recentList.append(newRecent)
+    }
+}
 
-// Default Irvine for 5-day forecast 
+// TO DO: 5-day forecast (default Irvine) 
