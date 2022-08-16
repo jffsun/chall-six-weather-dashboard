@@ -6,6 +6,19 @@
 :root {
  --sky: #8fe0ff;
  --baby: #75b4e3;
+ --uv0: #2e6c00;
+ --uv1: #4eb400;
+ --uv2: #a0ce00;
+ --uv3: #f7e400;
+ --uv4: #f8b600;
+ --uv5: #f88700;
+ --uv6: #f85900;
+ --uv7: #e82c0e;
+ --uv8: #d8001d;
+ --uv9: #ff0099;
+ --uv10: #b54cff;
+ --uv11: #998cff;
+
 }
 
 h1 {
@@ -38,4 +51,95 @@ input {
 
 .container {
     padding-right: 30px;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+.uv-none {
+    background: transparent;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #000000;
+} 
+
+.uv0 {
+    background: var(--uv0);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+} 
+
+.uv1 {
+    background: var(--uv1);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+} 
+
+.uv2 {
+    background: var(--uv2);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv3 {
+    background: var(--uv3);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv4 {
+    background: var(--uv4);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv5 {
+    background: var(--uv5);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv6 {
+    background: var(--uv6);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv7 {
+    background: var(--uv7);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv8 {
+    background: var(--uv8);    
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv9 {
+    background: var(--uv9);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv10 {
+    background: var(--uv10);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+
+.uv11 {
+    background: var(--uv11);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #ffffff;
 }
