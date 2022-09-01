@@ -18,20 +18,19 @@
     <div class="jumbotron jumbotron-fluid">
 
         <!-- City search column container -->
-        <div class="search-container col-4">
+        <div class="search-container col-3">
             <h2>Search for a City</h2>
 
             <!-- Searchbar -->
             <form id="search-form">
             <input class="form-control form-control-lg" id="search-input" type="text" placeholder="Los Angeles">
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button class="btn btn-primary" id="search-button" type="submit">Search City</button>
             </form>
 
             <!-- Recent searches -->
-            <div id="recent-list">
+            <div id="recents-list">
             </div>
         </div>
-
 
         <!-- Forecast container  -->
         <div class="container">
@@ -39,7 +38,7 @@
             <!-- Today forecast -->
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title" id="result-text">City (MM/DD/YY)</h5>
+                    <h5 class="card-title" id="city-date">City (MM/DD/YY)</h5>
                     <p class="card-text" id="temp-today">Temp:</p>
                     <p class="card-text" id="wind-today">Wind:</p>
                     <p class="card-text" id="humid-today">Humidity:</p>
@@ -48,40 +47,9 @@
             </div>
     
             <!-- 5-Day Forecast -->
-            <div class="card-group">
+            <div id="forecast" class="card-group">
                 <h2>5-Day Forecast</h2>
 
-                <!-- Day forecast card -->
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -45,8 +45,11 @@ input {
 }
 
 .btn {
-    background: var(--baby);
     width: 100%;
+}
+
+.recent-button {
+    border-color: #000000;
 }
 
 .container {
@@ -142,4 +145,9 @@ input {
     border-radius: 5px;
     padding: 5px 15px;
     color: #ffffff;
+}
+
+#search-button {
+    background: var(--baby);
+    margin-bottom: 20px;
 }
