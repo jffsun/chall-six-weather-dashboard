@@ -20,7 +20,6 @@ function renderRecents () {
   // retrieves locally stored cities or sets an empty array if no cities stored
   recents = JSON.parse(localStorage.getItem("recents") || '[]');
 
-  console.log(recents);
   recentsListEl.innerHTML = "";
 
   // for every recent search create a button 
