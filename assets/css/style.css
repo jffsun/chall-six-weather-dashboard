@@ -3,6 +3,8 @@
     padding: 0;
     }
 
+/* Variables for custom color properties  */
+
 :root {
  --sky: #8fe0ff;
  --baby: #75b4e3;
@@ -55,6 +57,8 @@ input {
 .container {
     padding-right: 30px;
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+/* UVI color coding classes */
 
 .uv-none {
     background: transparent;

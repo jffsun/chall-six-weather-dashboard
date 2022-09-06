@@ -1,100 +1,54 @@
-# 06 Server-Side APIs: Weather Dashboard
+# Challenge Six: Server-Side APIs - Weather Dashboard
 
-## Your Task
+## Project Description
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+Challenge Six involved the implemention of OpenWeather's Api to display a city's current and five day weather forecast. The city's weather forecast includes information on temperature,  humidity,  wind speed, UV index, and an icon representation of the city's general weather conditions. Additionally, searches are stored locally and are rendered to the page as buttons, redisplaying that city's conditions if clicked. Documention on OpenWeather's Api was referenced from (https://openweathermap.org/api/one-call-api). 
 
-Use the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. Read through the documentation for setup and usage instructions. You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+### Application Screenshot
 
-## User Story
+The following image shows the weather dashboard application:
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+![Weather Dashboard Application](./assets/images/weather-dashboard.jpg)
 
-## Acceptance Criteria
+### Current Forecast
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+The following image shows the weather dashboard displaying a city's temperature, wind speed, humidity, and UV Index. 
 
-## Mock-Up
+![Current Forecast](./assets/images/current-forecast.jpg)
 
-The following image shows the web application's appearance and functionality:
+### UV Index Color
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+The UV index value, fetched from OpenWeather's Api, is rendered onto the page and then assigned a class according it's truncated value.
 
-## Grading Requirements
+![UVI Javascript](./assets/images/uvi-javascript.jpg)
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+The class given to the index value changes the styling of the value displayed.
 
-This Challenge is graded based on the following criteria: 
+![UVI Classes](./assets/images/uvi-classes.jpg)
 
-### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the above acceptance criteria plus the following:
+### Five Day Forecast
 
-    * Uses the OpenWeather API to retrieve weather data.
+The following image shows a five day forecast for the city searched. Along with the weather conditions, an icon corresponding to the conditions is also displayed.
 
-    * Uses `localStorage` to store persistent data.
+![Five Day Forecast](./assets/images/five-day.jpg)
 
-### Deployment: 32%
+### Recent Searches and Local Storage
 
-* Application deployed at live URL.
+The following image shows recent search buttons added below the search bar. 
 
-* Application loads with no errors.
+![Recent Searches](./assets/images/recents.jpg)
 
-* Application GitHub URL submitted.
+After a city is searched, it is added to an array which is saved to local storage. The result is then prepended to the list of recent searches.
 
-* GitHub repository that contains application code.
+![Local Storage](./assets/images/local-storage.jpg)
 
-### Application Quality: 15%
+In the following GIF, the city "Costa Mesa" is searched, displayed to the recent searches list, is stored, and is available to the user upon refresh.
 
-* Application user experience is intuitive and easy to navigate.
+![Storage GIF](./assets/images/storage-demo.gif)
 
-* Application user interface style is clean and polished.
+### Link to Github Page
+[https://jffsun.github.io/chall-six-weather-dashboard](https://jffsun.github.io/chall-six-weather-dashboard).
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+### Link to Github Repository
+[https://github.com/jffsun/chall-six-weather-dashboard](https://github.com/jffsun/chall-six-weather-dashboard).
